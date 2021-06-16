@@ -1,4 +1,5 @@
-Update the file `gloo-fed/templates/gloo-fed-rbac.yaml` to contain RBAC permissions required for the gloo-fed controller --
+## Step 1
+First, in the `gloo-fed` chart update the file `gloo-fed/templates/gloo-fed-rbac.yaml` to contain RBAC permissions required for the gloo-fed controller --
 
 At line 69, right below the block:
 ```
@@ -45,6 +46,8 @@ change the ending of the `ClusterRole` to:
   - watch
 ```
 
-Then we can install the chart via `helm` as ArgoCD does not work with this chart:
+## Step 2
+Then we can install the chart via `helm` as ArgoCD does not work with this chart.
+From this cloned repo:
 
 `helm install gloo-fed-local ./ -n gloo-system`
